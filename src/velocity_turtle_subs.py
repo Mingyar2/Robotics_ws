@@ -1,27 +1,27 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
+from geometry_msgs.msg import Twist #la nueva libreria que cambia respecto a la original 
 
-class VelocitySubscriber(Node):
+class VelocityTurtleSubscriber(Node):
     def __init__(self):
-        # Define el nombre del nodo subscriptor
-        super().__init__('velocity_subscriber')
-        # Se suscribe al tópico '/velocity' y vincula la función callback
-        self.subscription = self.create_subscription(
-            Float32,
-            '/velocity',
-            self.listener_callback,
+        super().__init__('velocity_turtle_subs')
+        
+        # Se suscribe al mismo tópico o canal de la tortuga para escuchar sus comandos
+        self.subscription_ = self.create_subscription(
+            Twist,
+            '/turtle1/cmd_vel',
+            self.velocity_callback,
             10)
-        self.subscription
 
-    def listener_callback(self, msg):
-        # Función que se ejecuta al recibir un mensaje; lo imprime en consola
-        self.get_logger().info(f'He escuchado: Vel = {msg.data}')
+    def velocity_callback(self, msg):
+        # Lee la velocidad translacional (eje X) del mensaje Twist
+        Velocity = msg.linear.x
+        self.get_logger().info(f'Escuchando tortuga: Vel = {Velocity:.1f} m/s')
 
-def main(args=None):
+def main(args = None):
     rclpy.init(args=args)
-    node = VelocitySubscriber()
-    rclpy.spin(node) # Mantiene el nodo escuchando
+    node = VelocityTurtleSubscriber()
+    rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
 
