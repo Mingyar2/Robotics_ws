@@ -19,3 +19,26 @@ El sistema se compone de dos nodos escritos en Python. El nodo publicador (`velo
 
 **Evidencia en video:**
 https://drive.google.com/file/d/1BN5PVfTQJ86hhEGQilGJHWaXFFlGhi1n/view?usp=sharing
+---
+## Actividad 2: Control de Turtlesim
+
+**Descripción breve de la actividad:**
+Se adaptaron los nodos de publicación y suscripción para interactuar directamente con el s>
+
+**Explicación de modificaciones:**
+Para lograr el objetivo, se migró del tipo de mensaje estándar `Float32` al mensaje geomét>
+
+**Comandos utilizados:**
+* Simulador: `ros2 run turtlesim turtlesim_node`
+* Ejecución de nuevos nodos: `ros2 run basics velocity_turtle_pub` y `ros2 run basics velo>
+* Análisis y comprobación: `ros2 node list`, `ros2 topic list` y `rqt_graph`.
+
+**Problemas encontrados y soluciones:**
+1. *Problema:* El uso del tópico y tipo de mensaje anterior no afectaba al simulador.
+   *Solución:* Se actualizó la dependencia en `package.xml` para incluir `geometry_msgs`, >
+
+**Evidencia en video (Actividad 2):**
+Se anexa el link de la carpete de drive en la que estarán los videos 
+https://drive.google.com/drive/folders/1cGgV3uluH7qB-fDrqvxCo4OXLkDQRR1C?usp=drive_link 
+
+
