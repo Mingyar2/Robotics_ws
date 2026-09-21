@@ -41,4 +41,14 @@ Para lograr el objetivo, se migró del tipo de mensaje estándar `Float32` al me
 Se anexa el link de la carpete de drive en la que estarán los videos 
 https://drive.google.com/drive/folders/1cGgV3uluH7qB-fDrqvxCo4OXLkDQRR1C?usp=drive_link 
 
+# Práctica 3: ROS 2 y ESP32
 
+**Descripción breve:** 
+Configuración de un espacio de trabajo en ROS 2 para establecer comunicación serial bidireccional con un microcontrolador ESP32.
+
+**Explicación de los ejemplos:**
+El sistema del LED utiliza un nodo publicador (`led_blink.py`) que genera comandos de estado (0 y 1) en el tópico `/led_command` periódicamente. Un nodo subscriptor (`serial_bridge.py`) escucha este tópico y escribe físicamente el dato en el puerto serial conectado al ESP32, encendiendo o apagando el LED de la placa de desarrollo.
+
+**Evidencia en video (LED):**
+[todo en la carpeta compartida como practica 3]
+https://drive.google.com/file/d/1BN5PVfTQJ86hhEGQilGJHWaXFFlGhi1n/view?usp=sharing
