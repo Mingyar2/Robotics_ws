@@ -75,3 +75,19 @@ https://drive.google.com/file/d/1BN5PVfTQJ86hhEGQilGJHWaXFFlGhi1n/view?usp=shari
 **Problemas:** Ruido en el ADC generaba lecturas con comas extra. Se solucionó validando la estructura del String con un `try-except` y comprobando la coma separadora.
 
 **Video:** [https://drive.google.com/drive/folders/1cGgV3uluH7qB-fDrqvxCo4OXLkDQRR1C?usp=drive_link]
+---
+## Actividad: ROS 2 Launch
+
+**Descripción breve de la actividad:**
+Implementación y uso de archivos tipo launch en ROS 2 para la ejecución simultánea y coordinada de múltiples nodos desde una sola terminal.
+
+**Explicación del ejemplo:**
+Se desarrolló el archivo `velocity_system.launch.py`, el cual orquesta la ejecución concurrente de los nodos `velocity_publisher` y `velocity_subscriber` pertenecientes al paquete `basics`. Esto elimina la necesidad de abrir múltiples terminales para correr cada nodo individualmente. Asimismo, se configuró el archivo `setup.py` dentro de `data_files` para permitir la correcta instalación del script en el directorio `share` del paquete.
+
+**Comprobación del funcionamiento:**
+* Ejecución del launch: `ros2 launch basics velocity_system.launch.py`
+* Inspección de nodos y tópicos: `ros2 node list` y `ros2 topic list`
+* Visualización del grafo de comunicación: `rqt_graph`
+
+**Evidencia en video:**
+[En Google Drive]
