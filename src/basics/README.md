@@ -91,3 +91,11 @@ Se desarrolló el archivo `velocity_system.launch.py`, el cual orquesta la ejecu
 
 **Evidencia en video:**
 [En Google Drive]
+ 
+## Integración Final Act6-Launch turtle_joy_controller: Control de Turtlesim mediante Launch File
+
+**Descripción breve de la actividad:**
+Se desarrolló un archivo orquestador tipo launch (`turtle_joy_controller.launch.py`) para iniciar de forma simultánea el simulador de turtlesim, el nodo publicador de los datos físicos del ESP32 (`joystick_pub`) y el nodo de control matemático (`turtle_controller`). Esto permite inicializar el sistema de teleoperación completo desde una sola terminal.
+
+**Evidencia en video:**
+[En google drive con el nombre de Act6_Launch turtle joy)]
